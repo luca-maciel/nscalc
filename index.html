@@ -11,25 +11,30 @@
 
 <body>
     <div class="container">
-        <h2>Numeration system conversor</h2>
+        <h2 id="title">Numeration system conversor</h2>
         <div class="inputs">
-            <select name="select" id="select" onchange="calcular()">
-                <option value="decimal">decimal</option>
-                <option value="binary">binary</option>
-                <option value="octal">octal</option>
-                <option value="hexadecimal">hexadecimal</option>
-            </select>
-            <input type="text" id="number" placeholder="Enter a number" oninput="calcular()">
-            <br><br>
-            <select name="select2" id="select2" onchange="calcular()">
-                <option value="decimal">decimal</option>
-                <option value="binary">binary</option>
-                <option value="octal">octal</option>
-                <option value="hexadecimal">hexadecimal</option>
-                <option value="fractionary_binary" id="fractionary_binary_option" hidden>fractionary binary</option>
-            </select>
-            <br><br>
-            <label id="result">resultado</label>
+            <div class="rows">
+                <select name="select" id="select" onchange="calcular()">
+                    <option value="decimal">Decimal</option>
+                    <option value="binary">Binary</option>
+                    <option value="octal">Octal</option>
+                    <option value="hexadecimal">Hexadecimal</option>
+                </select>
+                <input type="text" id="number" placeholder="Enter a number" oninput="calcular()">
+
+            </div>
+            <br>
+            <div class="rows2">
+                <select name="select2" id="select2" onchange="calcular()">
+                    <option value="decimal">Decimal</option>
+                    <option value="binary">Binary</option>
+                    <option value="octal">Octal</option>
+                    <option value="hexadecimal">Hexadecimal</option>
+                    <option value="fractionary_binary" id="fractionary_binary_option" hidden>Fractionary binary</option>
+                </select>
+                <label id="result">Result</label>
+
+            </div>
         </div>
 
     </div>

@@ -17,23 +17,44 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
+    width: 100%;
+    height: 100vh;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     line-height: 1.6;
 }
 
 .container {
     width: 90%;
     max-width: 800px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     background: var(--primary-color);
     padding: 20px;
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.rows, .rows2{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.rows2{
+    justify-content: start;
+    gap: 20px;
 }
 
 h1, h2, h3 {
@@ -76,7 +97,14 @@ input, textarea {
 }
 
 input{
+    width: 80%;
+    transition: .3s ease-in-out;
+}
+
+input:hover{
     width: 97%;
+    outline: 1px solid var(--accent-color);
+    transition: .3s ease-in-out;
 }
 
 /* Estilização de tabela */
@@ -98,7 +126,7 @@ td {
 }
 
 select{
-    width: 20%;
+    width: 40%;
     height: 4vh;
     text-align: center;
     font-weight: 700;
@@ -106,6 +134,7 @@ select{
 }
 
 option{
+    transition: .3s;
     font-weight: 700;
 }
 
@@ -123,19 +152,23 @@ select:focus{
 }
 
 select:hover{
-    background-color: #9c5af7;
     color: whitesmoke;
     transition: .25s ease-in-out;
 }
 
 button:focus, input:focus, textarea:focus {
     outline: 1px solid var(--accent-color);
+    
 }
 
 #result{
     font-size: 1.25rem;
     font-weight: 650;
     color: #9c5af7;
+}
+
+#title{
+    font-size: 2rem;
 }
 
 /* Responsividade melhorada */
