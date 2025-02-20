@@ -1,0 +1,123 @@
+/* Tema Dark Moderno */
+:root {
+    --bg-color: #121212;
+    --primary-color: #1e1e1e;
+    --secondary-color: #252525;
+    --text-color: #e0e0e0;
+    --accent-color: #bb86fc;
+    --border-color: #333;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: var(--primary-color);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2, h3 {
+    color: var(--accent-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: #9c5af7;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    background: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+input{
+    width: 97%;
+}
+
+/* Estilização de tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid var(--border-color);
+}
+th {
+    background: var(--secondary-color);
+}
+
+td {
+    background: var(--primary-color);
+}
+
+/* Melhorando acessibilidade */
+:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+button:focus, input:focus, textarea:focus {
+    outline: 2px solid var(--accent-color);
+}
+
+/* Responsividade melhorada */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 15px;
+    }
+    button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+}
