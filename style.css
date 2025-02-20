@@ -152,6 +152,7 @@ select:focus{
 }
 
 select:hover{
+    background-color: #6338a0;
     color: whitesmoke;
     transition: .25s ease-in-out;
 }
