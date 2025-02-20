@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <title>Numeration system conversor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Numeration system conversor</h2>
+        <div class="inputs">
+            <select name="select" id="select" onchange="calcular()">
+                <option value="decimal">decimal</option>
+                <option value="binary">binary</option>
+                <option value="octal">octal</option>
+                <option value="hexadecimal">hexadecimal</option>
+            </select>
+            <input type="text" id="number" placeholder="Enter a number" oninput="calcular()">
+            <br><br>
+            <select name="select2" id="select2" onchange="calcular()">
+                <option value="decimal">decimal</option>
+                <option value="binary">binary</option>
+                <option value="octal">octal</option>
+                <option value="hexadecimal">hexadecimal</option>
+                <option value="fractionary_binary" id="fractionary_binary_option" hidden>fractionary binary</option>
+            </select>
+            <br><br>
+            <label id="result">resultado</label>
+        </div>
+
+    </div>
+</body>
+
+</html>
