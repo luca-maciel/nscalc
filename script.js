@@ -86,9 +86,6 @@ function decimalFractionaryToBinary(fractionaryNumber, step_by_step=false) {
     return `${integerBinary},${fractionaryBinary}`;
 }
 
-// até aqui tudo beleza
-
-
 function binaryFractionaryToDecimal(binaryNumber, step_by_step=false){
     if (step_by_step){
         let parts = binaryNumber.split('.');
@@ -478,7 +475,9 @@ function hexadecimalToOctal(hexadecimalNumber, step_by_step=false){
     }
 }
 
-function calcular(){
+
+
+function calcular(step_by_step=false){
     let base_convert = document.getElementById('select').value;
     let convert_to = document.getElementById('select2').value;
     let number = document.getElementById('number').value;
@@ -542,6 +541,59 @@ function calcular(){
         result_label.textContent = "Invalid input";
     }
 }
+
+const stepByStepButton = document.getElementById('step_by_step');
+
+function calcular2(){
+    let base_convert = document.getElementById('select').value;
+    let convert_to = document.getElementById('select2').value;
+    let number = document.getElementById('number').value;
+    result_label = document.getElementById('result');
+
+    if (base_convert == "decimal" && convert_to == "binary"){
+        decimalToBinary(number, step_by_step=true);
+    }
+    else if (base_convert == "decimal" && convert_to == "octal"){
+        decimalToOctal(number, step_by_step=true);
+    }
+    else if (base_convert == "decimal" && convert_to == "hexadecimal"){
+        decimalToHexadecimal(number, step_by_step=true);
+    }
+    else if (base_convert == "decimal" && convert_to == "fractionary_binary"){
+        decimalFractionaryToBinary(number, step_by_step=true);
+    }
+    else if (base_convert == "fractionary_binary" && convert_to == "decimal"){
+        binaryFractionaryToDecimal(number, step_by_step=true);
+    }
+
+    else if (base_convert == "binary" && convert_to == "decimal"){
+        binaryToDecimal(number, step_by_step=true);
+    }
+    else if (base_convert == "binary" && convert_to == "octal"){
+        binaryToOctal(number, step_by_step=true);
+    }
+    else if (base_convert == "binary" && convert_to == "hexadecimal"){
+        binaryToHexadecimal(number, step_by_step=true);
+    }
+    else if (base_convert == "octal" && convert_to == "decimal"){
+        octalToDecimal(number, step_by_step=true);
+    }
+    else if (base_convert == "octal" && convert_to == "binary"){
+        octalToBinary(number, step_by_step=true);
+    }
+    else if (base_convert == "octal" && convert_to == "hexadecimal"){
+        octalToHexadecimal(number, step_by_step=true);
+    }
+    else if (base_convert == "hexadecimal" && convert_to == "decimal"){
+        hexadecimalToDecimal(number, step_by_step=true);
+    }
+    else if (base_convert == "hexadecimal" && convert_to == "binary"){
+        hexadecimalToBinary(number, step_by_step=true);
+    }
+    else if (base_convert == "hexadecimal" && convert_to == "octal"){
+        hexadecimalToOctal(number, step_by_step=true);
+    }
+}  
 
 document.getElementById('select').onclick = function(){
     if (!document.getElementById('fractionary_binary_option')){
