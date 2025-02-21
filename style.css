@@ -232,6 +232,17 @@ input:checked + .slider:before {
         width: 100%;
     }
 }
+@media (max-width: 1920px) and (min-width: 769px) {
+    button{
+        width: 100%;
+    }
+    body{
+        height: 80vh;
+    }
+    .container{
+        height: 80%;
+    }
+}
 
 @media (max-width: 480px) {
     body {
