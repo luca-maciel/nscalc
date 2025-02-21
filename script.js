@@ -542,7 +542,7 @@ function calcular(step_by_step=false){
     }
 }
 
-const stepByStepButton = document.getElementById('step_by_step');
+// const stepByStepButton = document.getElementById('step_by_step');
 
 function calcular2(){
     let base_convert = document.getElementById('select').value;
@@ -594,6 +594,10 @@ function calcular2(){
         hexadecimalToOctal(number, step_by_step=true);
     }
 }  
+
+document.getElementById('step_by_step').addEventListener("click", ()=>{
+    calcular2();
+})
 
 document.getElementById('select').onclick = function(){
     if (!document.getElementById('fractionary_binary_option')){
