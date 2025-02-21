@@ -13,6 +13,8 @@
     <div class="container">
         <h2 id="title">Numeration system conversor</h2>
         <div class="inputs">
+            <button id="step_by_step" onclick="calcular2()">Step by step</button>
+            <br><br> 
             <button id="step_by_step" onclick="calcular2()">Step by step</button>  
             <div class="rows">
                 <select name="select" id="select" onchange="calcular()">
@@ -20,6 +22,8 @@
                     <option value="binary">Binary</option>
                     <option value="octal">Octal</option>
                     <option value="hexadecimal">Hexadecimal</option>
+                    <option value="fractionary_binary" id="fractionary_binary_option" hidden>Fractionary binary</option>
+                    
                 </select>
                 <input type="text" id="number" placeholder="Enter a number" oninput="calcular()">
 

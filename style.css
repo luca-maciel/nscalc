@@ -221,6 +221,7 @@ input:checked + .slider:before {
     transform: translateX(24px);
 }
 
+
 /* Responsividade melhorada */
 @media (max-width: 768px) {
     .container {
