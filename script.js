@@ -63,19 +63,31 @@ function decimalToHexadecimal(decimalNumber, stepByStep = false) {
     return hexadecimal;
 }
 
-function decimalFractionaryToBinary(fractionaryNumber) {
+function decimalFractionaryToBinary(fractionaryNumber, step_by_step=false) {
+    output = ""
     let [integerPart, fractionaryPart] = fractionaryNumber.toString().split(".").map(Number);
     let integerBinary = decimalToBinary(integerPart);
     let fractionaryBinary = "";
     let fraction = fractionaryPart / Math.pow(10, fractionaryPart.toString().length);
     while (fraction !== 0 && fractionaryBinary.length < 5) {
+        output += `${fraction} * 2 = ${fraction*2}\n`
         fraction *= 2;
         let bit = Math.floor(fraction);
         fractionaryBinary += bit.toString();
         fraction -= bit;
     }
+    if (step_by_step){
+        alert(`Converting number ${fractionaryNumber} to binary...`);
+        alert(`Parte inteira para binario\n${decimalToBinary(integerPart, step_by_step=true)}\nParte fracionaria para binario:\n${output}\n`);
+        alert(`Result: ${integerBinary},${fractionaryBinary}`);
+    }
+
+
     return `${integerBinary},${fractionaryBinary}`;
 }
+
+// até aqui tudo beleza
+
 
 function binaryToDecimal(binaryNumber) {
     return parseInt(binaryNumber, 2);
@@ -197,6 +209,9 @@ function calcular2(){
     }
     else if (base_convert == "decimal" && convert_to == "hexadecimal"){
         decimalToHexadecimal(number, step_by_step=true);
+    }
+    else if (base_convert == "decimal" && convert_to == "fractionary_binary"){
+        decimalFractionaryToBinary(number, step_by_step=true);
     }
 }
 // stepByStepButton.addEventListener("click", ()=>{
