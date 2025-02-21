@@ -1,21 +1,27 @@
 function decimalToBinary(decimalNumber, stepByStep = false) {
     let binary = "";
-    if (stepByStep) {
-        console.log(`Converting number ${decimalNumber} to binary...`);
+    let output = "";
+    if (stepByStep){
+        alert(`Converting ${decimalNumber} to binary...`);
     }
     while (decimalNumber > 0) {
         binary += (decimalNumber % 2).toString();
         if (stepByStep) {
+            output += `${decimalNumber} ÷ 2 = ${Math.floor(decimalNumber / 2)} | remainder = ${decimalNumber % 2}\n`;
             console.log(`${decimalNumber} ÷ 2 = ${Math.floor(decimalNumber / 2)} | remainder = ${decimalNumber % 2}`);
         }
         decimalNumber = Math.floor(decimalNumber / 2);
     }
     binary = binary.split("").reverse().join("");
+    if(stepByStep){
+        alert(`${output}\n${binary}`);
+    }
     return binary.padStart(3, "0");
 }
 
 function decimalToOctal(decimalNumber, stepByStep = false) {
     let octal = "";
+    let output = "";
     if (stepByStep) {
         console.log(`Converting number ${decimalNumber} to octal...`);
     }
@@ -23,9 +29,13 @@ function decimalToOctal(decimalNumber, stepByStep = false) {
         let remainder = decimalNumber % 8;
         if (stepByStep) {
             console.log(`${decimalNumber} ÷ 8 = ${Math.floor(decimalNumber / 8)} | remainder = ${remainder}`);
+            output += `${decimalNumber} ÷ 8 = ${Math.floor(decimalNumber / 8)} | remainder = ${remainder}\n`;
         }
         octal = remainder.toString() + octal;
         decimalNumber = Math.floor(decimalNumber / 8);
+    }
+    if(stepByStep){
+        alert(`${output}\n${octal}`);
     }
     return octal;
 }
@@ -104,7 +114,7 @@ function hexadecimalToOctal(hexadecimalNumber){
     return decimalToOctal(decimal);
 }
 
-function calcular(){
+function calcular(step_by_step=false){
     let base_convert = document.getElementById('select').value;
     let convert_to = document.getElementById('select2').value;
     let number = document.getElementById('number').value;
@@ -165,6 +175,32 @@ function calcular(){
         result_label.textContent = "Invalid input";
     }
 }
+
+const stepByStepButton = document.getElementById('step_by_step');
+
+function calcular2(){
+    let base_convert = document.getElementById('select').value;
+    let convert_to = document.getElementById('select2').value;
+    let number = document.getElementById('number').value;
+    result_label = document.getElementById('result');
+
+    if (base_convert == "decimal" && convert_to == "binary"){
+        decimalToBinary(number, step_by_step=true);
+    }
+    else if (base_convert == "decimal" && convert_to == "octal"){
+        decimalToOctal(number, step_by_step=true);
+    }
+}
+// stepByStepButton.addEventListener("click", ()=>{
+//     let base_convert = document.getElementById('select').value;
+//     let convert_to = document.getElementById('select2').value;
+//     let number = document.getElementById('number').value;
+//     result_label = document.getElementById('result');
+
+//     if (base_convert == "decimal" && convert_to == "binary"){
+//         alert(decimalToBinary(document.getElementById('number').value, step_by_step=true))
+//     }
+// })    
 
 document.getElementById('select').onclick = function(){
     if (!document.getElementById('fractionary_binary_option')){

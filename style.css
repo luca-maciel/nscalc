@@ -152,7 +152,6 @@ select:focus{
 }
 
 select:hover{
-    background-color: #6338a0;
     color: whitesmoke;
     transition: .25s ease-in-out;
 }
@@ -170,6 +169,56 @@ button:focus, input:focus, textarea:focus {
 
 #title{
     font-size: 2rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+/* Esconde o checkbox padrão */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilização da base do interruptor */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+}
+
+/* Estilização da bolinha deslizante */
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* Muda a cor quando ativado */
+input:checked + .slider {
+    background-color: #4CAF50;
+}
+
+/* Move a bolinha para a direita quando ativado */
+input:checked + .slider:before {
+    transform: translateX(24px);
 }
 
 /* Responsividade melhorada */
