@@ -2,7 +2,7 @@ function decimalToBinary(decimalNumber, stepByStep = false) {
     let binary = "";
     let output = "";
     if (stepByStep){
-        alert(`Converting ${decimalNumber} to binary...`);
+        window.alert(`Converting ${decimalNumber} to binary...`);
     }
     while (decimalNumber > 0) {
         binary += (decimalNumber % 2).toString();
@@ -14,7 +14,7 @@ function decimalToBinary(decimalNumber, stepByStep = false) {
     }
     binary = binary.split("").reverse().join("");
     if(stepByStep){
-        alert(`${output}\n${binary}`);
+        window.alert(`${output}\n${binary}`);
     }
     return binary.padStart(3, "0");
 }
@@ -43,17 +43,22 @@ function decimalToOctal(decimalNumber, stepByStep = false) {
 function decimalToHexadecimal(decimalNumber, stepByStep = false) {
     const letters = { 10: "A", 11: "B", 12: "C", 13: "D", 14: "E", 15: "F" };
     let hexadecimal = "";
+    let output = "";
     if (stepByStep) {
-        console.log(`Converting number ${decimalNumber} to hexadecimal...`);
+        alert(`Converting number ${decimalNumber} to hexadecimal...`);
     }
     while (decimalNumber > 0) {
         let remainder = decimalNumber % 16;
         let digit = remainder < 10 ? remainder.toString() : letters[remainder];
         if (stepByStep) {
             console.log(`${decimalNumber} ÷ 16 = ${Math.floor(decimalNumber / 16)} | remainder = ${remainder}`);
+            output += `${decimalNumber} ÷ 16 = ${Math.floor(decimalNumber / 16)} | remainder = ${remainder}\n`;
         }
         hexadecimal = digit + hexadecimal;
         decimalNumber = Math.floor(decimalNumber / 16);
+    }
+    if(stepByStep){
+        alert(`${output}\n${hexadecimal}`);
     }
     return hexadecimal;
 }
@@ -189,6 +194,9 @@ function calcular2(){
     }
     else if (base_convert == "decimal" && convert_to == "octal"){
         decimalToOctal(number, step_by_step=true);
+    }
+    else if (base_convert == "decimal" && convert_to == "hexadecimal"){
+        decimalToHexadecimal(number, step_by_step=true);
     }
 }
 // stepByStepButton.addEventListener("click", ()=>{
