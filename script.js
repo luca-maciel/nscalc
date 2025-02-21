@@ -599,21 +599,21 @@ document.getElementById('step_by_step').addEventListener("click", ()=>{
     calcular2();
 })
 
-document.getElementById('select').onclick = function(){
-    if (!document.getElementById('fractionary_binary_option')){
-        fbo = document.createElement("option");
-        fbo.text = "fractionary binary";
-        fbo.value = "fractionary_binary";
-        fbo.id = "fractionary_binary_option";
-        document.getElementById('select2').appendChild(fbo);
-    }
-}
+// document.getElementById('select').onclick = function(){
+//     if (!document.getElementById('fractionary_binary_option')){
+//         fbo = document.createElement("option");
+//         fbo.text = "fractionary binary";
+//         fbo.value = "fractionary_binary";
+//         fbo.id = "fractionary_binary_option";
+//         document.getElementById('select2').appendChild(fbo);
+//     }
+// }
 
-document.getElementById('select2').onclick = function() {
-    if (document.getElementById('select').value == "decimal"){
-        document.getElementById('fractionary_binary_option').removeAttribute("hidden")
-    }
-    else{
-        document.getElementById('select2').removeChild(document.getElementById("fractionary_binary_option"));
-    }
-}
+// document.getElementById('select2').onclick = function() {
+//     if (document.getElementById('select').value == "decimal"){
+//         document.getElementById('fractionary_binary_option').removeAttribute("hidden")
+//     }
+//     else{
+//         document.getElementById('select2').removeChild(document.getElementById("fractionary_binary_option"));
+//     }
+// }
