@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <title>Numeration system conversor</title>
     <script src="./script.js" defer></script>
 </head>
 
 <body>
-    <div class="container">
-        <h2 id="title">Numeration system conversor</h2>
+    <i class="fa-solid fa-repeat" id="switcher"></i>
+    <div class="container" id="container">
+        <h2 id="title">Numeration system conversor <i class="fa-solid fa-calculator"></i></h2>
         <div class="inputs">
             <button id="step_by_step">Step by step</button>
             <br><br>
@@ -41,6 +43,16 @@
             </div>
         </div>
 
+    </div>
+    <div class="container2" id="container2">
+        <h2 id="title2">Binary sum/sub <i class="fa-solid fa-calculator"></i></h2>
+        <div class="inputs2">
+            <input type="text" id="n1" placeholder="Enter the first binary number">
+            <input type="text" id="n2" placeholder="Enter the second binary number">
+            <button id="sum" onclick="sum()">Sum</button>
+            <button id="sub" onclick="sub()">Sub</button>
+            <label id="sum_result">Result</label>
+        </div>
     </div>
 </body>
 

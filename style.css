@@ -29,10 +29,11 @@ body {
     line-height: 1.6;
 }
 
-.container {
+.container, .container2 {
+    overflow: hidden;
     width: 90%;
     max-width: 800px;
-    height: 50vh;
+    height: 65vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,6 +43,28 @@ body {
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hidden{
+    display: none;
+}
+
+.container2{
+    display: none;
+}
+
+.visible{
+    display: flex;
+}
+
+.inputs2{
+    height: 50%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .rows, .rows2{
@@ -73,6 +96,7 @@ a:hover {
 button {
     background: var(--accent-color);
     color: var(--bg-color);
+    font-weight: 600;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -171,44 +195,18 @@ button:focus, input:focus, textarea:focus {
     font-size: 2rem;
 }
 
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 25px;
+#switcher{
+    display: block;
+    margin-top: 15px;
+    height: 4vh;
+    border-radius: 10px;
+    transition: .2s ease-in-out;
 }
 
-/* Esconde o checkbox padrão */
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-/* Estilização da base do interruptor */
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 25px;
-}
-
-/* Estilização da bolinha deslizante */
-.slider:before {
-    content: "";
-    position: absolute;
-    height: 18px;
-    width: 18px;
-    left: 4px;
-    bottom: 3.5px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
+#switcher:hover{
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 12px);
+    transition: .2s ease-in-out;
 }
 
 /* Muda a cor quando ativado */
@@ -224,17 +222,40 @@ input:checked + .slider:before {
 
 /* Responsividade melhorada */
 @media (max-width: 768px) {
+    #switcher{
+        display: block;
+        margin-top: 15px;
+        font-size: 2rem;
+        height: 4vh;
+        border-radius: 10px;
+        transition: .2s ease-in-out;
+    }
+    
+    #switcher:hover{
+        font-size: 2.5rem;
+        filter: drop-shadow(0 0 12px);
+        transition: .2s ease-in-out;
+    }
+    .container, .container2{
+        height: 40vh;
+    }
+    .container2{
+        justify-content: space-around;
+    }
     .container {
         width: 95%;
         padding: 15px;
     }
     button {
-        width: 100%;
+        width: 80%;
     }
 }
 @media (max-width: 1920px) and (min-width: 769px) {
     button{
         width: 100%;
+    }
+    #sum, #sub{
+        width: 80%;
     }
     body{
         height: 80vh;

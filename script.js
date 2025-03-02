@@ -168,7 +168,6 @@ function binaryToDecimal(binaryNumber, step_by_step=false) {
     }
 }
 
-
 function binaryToOctal(binaryNumber, step_by_step=false) {
     if (step_by_step){
         let binaryString = binaryNumber.toString();
@@ -599,21 +598,36 @@ document.getElementById('step_by_step').addEventListener("click", ()=>{
     calcular2();
 })
 
-// document.getElementById('select').onclick = function(){
-//     if (!document.getElementById('fractionary_binary_option')){
-//         fbo = document.createElement("option");
-//         fbo.text = "fractionary binary";
-//         fbo.value = "fractionary_binary";
-//         fbo.id = "fractionary_binary_option";
-//         document.getElementById('select2').appendChild(fbo);
-//     }
-// }
+const switcher = document.getElementById('switcher');
+const container1 = document.getElementById('container');
+const container2 = document.getElementById('container2');
 
-// document.getElementById('select2').onclick = function() {
-//     if (document.getElementById('select').value == "decimal"){
-//         document.getElementById('fractionary_binary_option').removeAttribute("hidden")
-//     }
-//     else{
-//         document.getElementById('select2').removeChild(document.getElementById("fractionary_binary_option"));
-//     }
-// }
+
+switcher.addEventListener("click", ()=>{
+    container1.classList.toggle('hidden');
+    container2.classList.toggle('visible');
+})
+
+const sumBinaryButton = document.getElementById('sum');
+const subBinaryButton = document.getElementById('sub');
+let sum_result = document.getElementById('sum_result');
+
+function sum(n1, n2){
+    return decimalToBinary((binaryToDecimal(n1) + binaryToDecimal(n2)));
+}
+
+function sub(n1, n2){
+    return decimalToBinary((binaryToDecimal(n1) - binaryToDecimal(n2)));
+}
+
+sumBinaryButton.addEventListener("click", ()=>{
+    const binary1 = document.getElementById('n1').value;
+    const binary2 = document.getElementById('n2').value;
+    sum_result.textContent = sum(binary1, binary2);
+})
+
+subBinaryButton.addEventListener("click", ()=>{
+    const binary1 = document.getElementById('n1').value;
+    const binary2 = document.getElementById('n2').value;
+    sum_result.textContent = sub(binary1, binary2);
+})
